@@ -1,2 +1,35 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/styles/index.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet"/>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/ui.js" ></script>
+</head>
+<body>
+    <div id="map">
+        <div id="main-title" class="non-game">TRIVIA</div>
+        <div id="play-buttons" class="non-game">
+            {{#if loggedIn}}
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button id="play-button-login">Login</button>
+            {{else}}
+                <button id="play-button-play">Play</button>
+            {{/if}}
+        </div>
+
+        {{#each points}}
+            <div id="point-{{id}}" class="game point"></div>
+        {{/each}}
+
+        <div id="status-bar" class="game"></div>
+        <div id="tips" class="game"></div>
+        <div id="confirm" class="game popup"></div>
+        <div id="question-multiple" class="game question popup"></div>
+        <div id="question-guess" class="game question popup"></div>
+    </div>
+</body>
+</html>
