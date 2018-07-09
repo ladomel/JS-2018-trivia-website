@@ -10,13 +10,17 @@ router.get('/', function(req, res, next) {
           {id: 3, name: "C"},
           {id: 4, name: "D"},
           {id: 5, name: "E"},
-          {id: 6, name: "F"},
-          {id: 7, name: "G"},
-          {id: 8, name: "H"},
-          {id: 9, name: "I"},
-          {id: 10, name: "J"},
-          {id: 11, name: "K"},
-          {id: 12, name: "L"}
+          {id: 6, name: "F"}
+      ],
+      relations: [
+          [1, 2],
+          [1, 3],
+          [2, 4],
+          [3, 4],
+          [3, 5],
+          [4, 5],
+          [4, 6],
+          [5, 6]
       ],
       loggedIn: false
   });

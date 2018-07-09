@@ -28,7 +28,6 @@ html {
     position: relative;
     top: 150px;
     width: 300px;
-    height: 140px;
     text-align: center;
     margin: 0 auto;
 }
@@ -37,14 +36,28 @@ html {
     background: lavender;
     font-size: 20px;
     font-weight: bold;
-    display: block;
-    width: 96%;
-    height: 48%;
+    width: 48%;
+    height: 30px;
     border-radius: 20px;
-    margin: 2%;
 }
 
 #play-buttons button:focus {
+    outline: none;
+}
+
+#play-buttons input {
+    background: lavender;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    width: 96%;
+    height: 30px;
+    border-radius: 20px;
+    margin: 2%;
+    text-align: center;
+}
+
+#play-buttons input:focus {
     outline: none;
 }
 
@@ -61,10 +74,10 @@ html {
 }
 
 .point {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
-    background: url("/resources/images/point.jpg") no-repeat center;
+    background: url("/resources/images/soldier.png") no-repeat center yellow;
     background-size: contain;
 }
 
@@ -73,7 +86,170 @@ html {
 }
 
 #point-1 {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: url("/resources/images/castle.png") no-repeat center blue;
+    background-size: contain;
+
     position: relative;
-    left: 10%;
-    top: 20%;
+    left: 13%;
+    top: 27%;
+}
+
+#point-2 {
+    position: relative;
+    left: 28%;
+    top: 50%;
+}
+
+#point-3 {
+    position: relative;
+    left: 50%;
+    top: 8%;
+}
+
+#point-4 {
+    position: relative;
+    left: 52%;
+    top: 23%;
+}
+
+#point-5 {
+    position: relative;
+    left: 76%;
+    top: 4%;
+}
+
+#point-6 {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: url("/resources/images/castle.png") no-repeat center red;
+    background-size: contain;
+
+    position: relative;
+    left: 85%;
+    top: 28%;
+}
+
+#player1 {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    color: blue;
+    font-size: 20px;
+}
+
+#player2 {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: red;
+    font-size: 20px;
+}
+
+#blur {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    min-width: 1000px;
+    min-height: 600px;
+    height: 100%;
+    z-index: 100;
+    background: rgba(100,100,100,0.6);
+}
+
+#question-multiple {
+    width: 500px;
+    background: slategrey;
+    position: relative;
+    top: -50px;
+    left: 250px;
+    z-index: 666;
+    text-align: center;
+    border-radius: 20px;
+    border: grey solid 5px;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+#question-multiple-question {
+
+}
+
+.question-multiple-answer {
+    width: 90%;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+.question-multiple-answer:focus {
+    outline: none;
+}
+
+#question-guess {
+    width: 500px;
+    background: slategrey;
+    position: relative;
+    top: -120px;
+    left: 250px;
+    z-index: 666;
+    text-align: center;
+    border-radius: 20px;
+    border: grey solid 5px;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+.question-guess-answer {
+    width: 80%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.question-guess-answer:focus {
+    outline: none;
+}
+
+.question-status {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.question {
+    display: none;
+}
+
+#loading {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 20px;
+    left: 480px;
+    display: none;
+    z-index: 1000;
+}
+
+#status-bar {
+    text-align: center;
+    width: 400px;
+    font-weight: bolder;
+    position: relative;
+    top: 50px;
+    left: 300px;
+    z-index: 1000;
+}
+
+#tips {
+    width: 400px;
+    font-weight: bold;
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 200px);
+    text-align: center;
 }

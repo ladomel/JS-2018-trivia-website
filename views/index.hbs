@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Wendy+One" rel="stylesheet"/>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/play.js" ></script>
     <script type="text/javascript" src="/js/ui.js" ></script>
 </head>
 <body>
@@ -13,11 +14,17 @@
         <div id="main-title" class="non-game">TRIVIA</div>
         <div id="play-buttons" class="non-game">
             {{#if loggedIn}}
-                <input type="text" placeholder="Username">
-                <input type="password" placeholder="Password">
-                <button id="play-button-login">Login</button>
-            {{else}}
                 <button id="play-button-play">Play</button>
+                <button id="play-button-logout">Play</button>
+            {{else}}
+                <!--<input id="user-name" type="text" placeholder="Username">-->
+                <!--<input id="user-password" type="password" placeholder="Password">-->
+                <!--<button id="play-button-register">Register</button>-->
+                <!--<button id="play-button-login">Login</button>-->
+
+                <!--Use aliases before I implement user support-->
+                <input id="alias" type="text" placeholder="Alias">
+                <button id="play-button">Play</button>
             {{/if}}
         </div>
 
@@ -25,11 +32,29 @@
             <div id="point-{{id}}" class="game point"></div>
         {{/each}}
 
-        <div id="status-bar" class="game"></div>
-        <div id="tips" class="game"></div>
+        <div id="player1" class="game"></div>
+        <div id="player2" class="game"></div>
         <div id="confirm" class="game popup"></div>
-        <div id="question-multiple" class="game question popup"></div>
-        <div id="question-guess" class="game question popup"></div>
+
+        <div id="blur" class="question"></div>
+        <img id="loading" src="/resources/images/loading.gif">
+        <div id="status-bar" class="game"></div>
+
+        <div id="question-multiple" class="question popup">
+            <h1 id="question-multiple-question"></h1>
+            <button class="question-multiple-answer"></button>
+            <button class="question-multiple-answer"></button>
+            <button class="question-multiple-answer"></button>
+            <button class="question-multiple-answer"></button>
+            <div class="question-status"></div>
+        </div>
+        <div id="question-guess" class="question popup">
+            <h1 id="question-guess-question"></h1>
+            <input type="number" class="question-guess-answer" placeholder="Enter Answer"/>
+            <div class="question-status"></div>
+        </div>
+
+        <div id="tips" class="game"></div>
     </div>
 </body>
 </html>
